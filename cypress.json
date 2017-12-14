@@ -1,0 +1,8 @@
+{
+  "baseUrl": "https://admin.d2.alianza.com",
+  "env": {
+    "userName": "automation@alianza.com",
+    "password": "test123"
+  },
+  "projectId": "1pd8df"
+}
