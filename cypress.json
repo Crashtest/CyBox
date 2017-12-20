@@ -1,8 +1,10 @@
 {
   "baseUrl": "https://admin.d2.alianza.com",
   "env": {
+    "apiUrl": "https://rest.d2.alianza.com/v2/authorize",
     "userName": "automation@alianza.com",
-    "password": "test123"
+    "password": "test123",
+    "fullName": "Auto Mation"
   },
   "projectId": "1pd8df"
 }

@@ -23,3 +23,31 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('loginByAdmin', (overrides = {}) => {
+    Cypress.log({
+        name: 'loginByAdmin'
+    })
+    const options = {
+        method: 'POST',
+        url: Cypress.env('apiUrl'),
+        contentType: 'application/json',
+        body: {
+            username: Cypress.env('userName'),
+            password: Cypress.env('password')
+        }
+    }
+    var token = ''
+    cy.request(options)
+        .then((resp) => {
+            expect(resp.status).to.eq(201)
+            token = resp.body.authToken
+            cy.log('The token is: ' + token)
+        })
+    cy.visit('/')
+    cy.window().then(function(win){
+        win.localStorage.setItem('auth-token', token)
+    })
+})
+
+
