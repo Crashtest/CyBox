@@ -44,7 +44,6 @@ Cypress.Commands.add('loginByAdmin', (overrides = {}) => {
             token = resp.body.authToken
             cy.log('The token is: ' + token)
         })
-    cy.visit('/')
     cy.window().then(function(win){
         win.localStorage.setItem('auth-token', token)
     })
