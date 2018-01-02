@@ -9,11 +9,8 @@ describe('Login Tests', function () {
         cy.get('#az-formly_Object_no-id_username_0')
             .type('höchst')
             .should('have.value', 'höchst');
-        cy.get('#az-formly_Object_no-id_password_0')
-            .type('más')
-            .should('have.value', 'más');
-        cy.contains('Sign In')
-            .should('be.enabled');
+        cy.get('#az-formly_Object_no-id_password_0').type('más').should('have.value', 'más');
+        cy.contains('Sign In').should('be.enabled');
         cy.get('[type="checkbox"]')
             .should('not.be.checked')
             .check()
